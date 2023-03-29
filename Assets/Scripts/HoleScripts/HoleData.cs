@@ -14,6 +14,13 @@ public class HoleData : MonoBehaviour
         set { _hole_level = value; }
     }
 
+    [SerializeField] private int _hole_size;
+    public int HoleSize
+    {
+        get { return _hole_size; }
+        set { _hole_size = value; }
+    }
+
     [SerializeField] private int _hole_experience;
     public int HoleExperience
     {

@@ -209,8 +209,13 @@ public class HoleHandler : Singleton<HoleHandler>, ISingleton, IEventObserver
     private void onHoleAbsorbed(EventParameters param)
     {
         setHoleRefs(param);
+        /*
         if (holeRef.IsFromObjPool)
+        {
+
+            Debug.Log("Rival hole absorbing");
             return;
+        }*/
 
         holeRef.AddHoleExperience( (int)Math.Round(holeRef2.HoleExperience * _game_values.HoleExpCannibalMultiplier));
 

@@ -71,7 +71,7 @@ public class Prop : Poolable, IPullable, IAbsorbable
     #region IPullable
     public void Pull(Transform target)
     {
-        if (!this.gameObject.activeInHierarchy)
+        if (!this.gameObject.activeInHierarchy || _is_absorbing)
             return;
 
         if (_pulling_prop is not null)

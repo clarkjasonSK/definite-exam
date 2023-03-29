@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
 public class Player : MonoBehaviour
 {
     #region System Values ScriptableO's
@@ -72,6 +70,7 @@ public class Player : MonoBehaviour
             _text_mesh = GetComponent<TextMesh>();
 
         playerParam = new EventParameters();
+
 
         _text_mesh.fontSize = _visual_values.NameTagBaseFontSize;
 

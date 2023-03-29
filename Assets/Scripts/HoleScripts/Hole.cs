@@ -7,6 +7,7 @@ public class Hole : Poolable, IAbsorbable
 {
     #region Hole Variables
     [SerializeField] private HoleData _hole_data;
+    [SerializeField] private HoleController _hole_controller;
 
     [SerializeField] private Collider2D _outer_collider;
     [SerializeField] private Collider2D _inner_collider;
@@ -59,11 +60,11 @@ public class Hole : Poolable, IAbsorbable
         if (IsFromObjPool)
             return;
 
-        InitializeHole(1, new Vector3(0,0,0), new Color(255, 0, 0));
+        InitializeHole(1, this.transform.localPosition, new Color(255, 0, 0));
         holeParams.AddParameter(EventParamKeys.PLAYER_PARAM, _playerHole);
     }
 
-    public void InitializeHole(int level, Vector2 spawnLocation, Color color)
+    public void InitializeHole(int level, Vector3 spawnLocation, Color color)
     {
         if (_game_values == null)
             _game_values = GameManager.Instance.GameValues;
